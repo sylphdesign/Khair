@@ -12,15 +12,15 @@
    CSS CUSTOM PROPERTIES & RESET
    ======================================== */
 :root {
-  --sage: #58685D;
-  --sage-light: #6A7A6F;
-  --sage-dark: #414E47;
-  --espresso: #2D2421;
-  --espresso-light: #3E3330;
+  --sage: #3e4f47;
+  --sage-light: #52635B;
+  --sage-dark: #2D3B33;
+  --espresso: #281e1d;
+  --espresso-light: #3D3332;
   --cream: #E8E2D8;
   --cream-light: #F2EDE6;
   --cream-dark: #D4CCC0;
-  --ivory: #FAF8F5;
+  --ivory: #ebe6de;
   --gold: #C4A265;
   --gold-light: #D4B87A;
   --gold-dark: #A8884D;
@@ -30,7 +30,7 @@
   --white: #FFFFFF;
   
   --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
-  --font-body: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-body: 'Ginora Sans', 'DM Sans', sans-serif;
   
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -116,24 +116,20 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   pointer-events: none;
 }
 .preloader-logo {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--cream);
-  letter-spacing: 0.15em;
+  display: inline-flex;
+  width: 240px;
+  height: 60px;
+  background-color: var(--cream);
+  -webkit-mask-image: url('src/img/Khair.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('src/img/Khair.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
   opacity: 0;
   animation: fadeInUp 1s var(--ease-out-expo) 0.2s forwards;
-}
-.preloader-sub {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.5em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-top: 8px;
-  opacity: 0;
-  animation: fadeInUp 1s var(--ease-out-expo) 0.5s forwards;
 }
 .preloader-line {
   width: 60px;
@@ -237,26 +233,23 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   box-shadow: 0 1px 0 rgba(0,0,0,0.04);
 }
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--cream);
-  letter-spacing: 0.08em;
-  transition: color 0.5s;
+  display: inline-flex;
+  align-items: center;
+  width: 140px;
+  height: 40px;
+  background-color: var(--cream);
+  -webkit-mask-image: url('src/img/Khair.svg');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center left;
+  mask-image: url('src/img/Khair.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center left;
+  transition: background-color 0.5s;
 }
 .nav.scrolled .nav-logo {
-  color: var(--espresso);
-}
-.nav-logo span {
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 0.55rem;
-  letter-spacing: 0.45em;
-  text-transform: uppercase;
-  display: block;
-  margin-top: -2px;
-  opacity: 0.6;
+  background-color: var(--espresso);
 }
 .nav-links {
   display: flex;
@@ -1180,7 +1173,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   border-bottom: 1px solid rgba(196,162,101,0.1);
 }
 .footer-brand .nav-logo {
-  font-size: 1.8rem;
+  width: 180px;
+  height: 52px;
   margin-bottom: 20px;
   display: inline-block;
 }
@@ -1398,7 +1392,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 /* Sub-page body state: solid nav, hide homepage-only elements */
 .sub-active .nav{background:rgba(250,248,245,0.92)!important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:14px 60px!important;box-shadow:0 1px 0 rgba(0,0,0,0.04)!important}
-.sub-active .nav-logo{color:var(--espresso)!important}
+.sub-active .nav-logo{background-color:var(--espresso)!important}
 .sub-active .nav-links a{color:var(--text-dark)!important}
 .sub-active .nav-cta{background:var(--espresso)!important;color:var(--cream)!important}
 .sub-active .nav-cta:hover{background:var(--sage-dark)!important}
@@ -1421,8 +1415,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 <!-- PRELOADER -->
 <div class="preloader" id="preloader">
-  <div class="preloader-logo">Khair</div>
-  <div class="preloader-sub">W I G S</div>
+  <div class="preloader-logo" aria-label="Khair"></div>
   <div class="preloader-line"></div>
 </div>
 
@@ -1439,7 +1432,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 <!-- NAVIGATION -->
 <nav class="nav" id="nav">
-  <a href="#" class="nav-logo">Khair<span>W I G S</span></a>
+  <a href="#" class="nav-logo" aria-label="Khair Wigs"></a>
   <ul class="nav-links">
     <li><a onclick="go('collection')" style="cursor:pointer">Collection</a></li>
     <li><a onclick="go('our-story')" style="cursor:pointer">Our Story</a></li>
@@ -1983,16 +1976,16 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="nav-logo">Khair<span>W I G S</span></a>
+      <a href="#" class="nav-logo" aria-label="Khair Wigs"></a>
       <p>Guided by over a decade of personal experience. We utilize premium quality hair for a finish that moves, feels, and blends beautifully. Made to look and feel like your own- but better.</p>
       <div class="footer-social">
-        <a href="#" aria-label="Instagram">
+        <a href="https://www.instagram.com/khair.wigs/" target="_blank" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
         </a>
-        <a href="#" aria-label="Facebook">
+        <a href="#" onclick="return false;" title="Coming soon" aria-label="Facebook">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         </a>
-        <a href="#" aria-label="TikTok">
+        <a href="#" onclick="return false;" title="Coming soon" aria-label="TikTok">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
         </a>
       </div>
