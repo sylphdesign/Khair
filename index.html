@@ -235,8 +235,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .nav-logo {
   display: inline-flex;
   align-items: center;
-  width: 140px;
-  height: 40px;
+  width: 260px;
+  height: 140px;
   background-color: var(--cream);
   -webkit-mask-image: url('src/img/Khair.svg');
   -webkit-mask-size: contain;
@@ -246,9 +246,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center left;
-  transition: background-color 0.5s;
+  transition: all 0.5s;
 }
 .nav.scrolled .nav-logo {
+  height: 70px;
+  width: 130px;
   background-color: var(--espresso);
 }
 .nav-links {
@@ -328,7 +330,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 700px;
+  min-height: 800px;
+  padding-top: 100px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1288,6 +1291,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 @media (max-width: 1024px) {
   .nav { padding: 16px 30px; }
   .nav.scrolled { padding: 12px 30px; }
+  .nav-logo { height: 100px; width: 185px; }
+  .nav.scrolled .nav-logo { height: 60px; width: 111px; }
   .section { padding: 80px 30px; }
   .hero-content { padding: 0 30px; }
   .hero-visual { display: none; }
@@ -1300,6 +1305,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 }
 
 @media (max-width: 768px) {
+  .nav-logo { height: 80px; width: 148px; }
+  .nav.scrolled .nav-logo { height: 50px; width: 92px; }
   .nav-links, .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
   .section { padding: 60px 20px; }
@@ -1320,7 +1327,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 
 
 /* ======================================== SUB-PAGE STYLES ======================================== */
-.sp-hero{padding:180px 60px 80px;background:var(--espresso);position:relative;overflow:hidden}
+.sp-hero{padding:260px 60px 80px;background:var(--espresso);position:relative;overflow:hidden}
 .sp-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 70% 50%,rgba(40,71,52,0.25) 0%,transparent 70%)}
 .sp-hero-in{position:relative;z-index:1;max-width:800px}
 .sp-bc{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;opacity:.7}
@@ -1404,8 +1411,8 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 [data-page]{display:none}[data-page].active{display:block}
 
 /* Responsive for sub-pages */
-@media(max-width:1024px){.sp-hero{padding:160px 30px 60px}.sp-narrow,.sp-wide{padding:60px 30px}.sp-pgrid{grid-template-columns:repeat(2,1fr)}.sp-cgrid,.sp-mgrid{grid-template-columns:1fr}.sp-cta{padding:60px 30px}}
-@media(max-width:768px){.sp-hero{padding:140px 20px 50px}.sp-narrow,.sp-wide{padding:50px 20px}.sp-pgrid{grid-template-columns:1fr;max-width:400px}.sp-cta{padding:50px 20px}}
+@media(max-width:1024px){.sp-hero{padding:220px 30px 60px}.sp-narrow,.sp-wide{padding:60px 30px}.sp-pgrid{grid-template-columns:repeat(2,1fr)}.sp-cgrid,.sp-mgrid{grid-template-columns:1fr}.sp-cta{padding:60px 30px}}
+@media(max-width:768px){.sp-hero{padding:180px 20px 50px}.sp-narrow,.sp-wide{padding:50px 20px}.sp-pgrid{grid-template-columns:1fr;max-width:400px}.sp-cta{padding:50px 20px}}
 
 </style>
 </head>
