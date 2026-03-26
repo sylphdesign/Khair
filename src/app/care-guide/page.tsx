@@ -1,8 +1,29 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Wig Care Guide \u2014 How to Wash, Style & Maintain Luxury Human Hair Wigs | Khair Wigs",
+  description: "Complete care instructions for your Khair wig. Learn how to wash, brush, heat-style, color, and store your hand-tied human hair wig for maximum longevity.",
+  keywords: ["wig care guide", "how to wash human hair wig", "wig maintenance", "wig storage", "heat styling wig", "coloring human hair wig", "wig care tips", "luxury wig care"],
+  openGraph: {
+    title: "Wig Care Guide \u2014 Washing, Styling & Maintenance",
+    description: "Keep your Khair wig looking beautiful for years. Daily care, washing technique, heat styling limits, and product recommendations.",
+    images: [{ url: "/og-care.jpg", width: 1200, height: 630 }],
+    type: "article",
+  },
+  twitter: {
+    title: "Luxury Wig Care Guide | Khair Wigs",
+    description: "Daily care, washing, heat styling, and storage tips for your hand-tied human hair wig.",
+  },
+};
 
 export default function Page() {
   return (
     <div className="page-wrapper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Care for a Luxury Human Hair Wig","description":"Complete care guide for hand-tied human hair wigs including daily care, washing, styling, and storage.","step":[{"@type":"HowToStep","name":"Daily Brushing","text":"Use a wide-tooth comb or wig brush. Start from the ends and work upward to protect hand-tied knots."},{"@type":"HowToStep","name":"Washing","text":"Every 8\u201312 wears with lukewarm water and sulfate-free shampoo. Swirl gently, never scrub. Condition mid-shaft to ends."},{"@type":"HowToStep","name":"Drying","text":"Blot with microfiber towel. Air dry completely on a wig stand before wearing or styling."},{"@type":"HowToStep","name":"Heat Styling","text":"Curl, straighten, or blow-dry below 350\u00b0F (175\u00b0C) with heat protectant."},{"@type":"HowToStep","name":"Storage","text":"Place on a silk or satin wig stand away from direct sunlight and heat sources."}]}) }}
+      />
 <section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Care Guide</p><h1>Care <em>Guide</em></h1><p>Treat it well and it'll reward you for years.</p></div></section>
 <div className="sp-narrow">
 <p className="sp-rv">Your Khair piece is built from premium human hair with hand-knotted construction. That means it responds to care much like your own hair — with a few important differences.</p>

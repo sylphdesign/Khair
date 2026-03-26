@@ -1,4 +1,20 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Return Policy \u2014 14-Day Returns & Quality Guarantee | Khair Wigs",
+  description: "Khair Wigs return policy. Standard collection returnable within 14 days. Custom order quality guarantee with free defect repairs. Refunds processed within 10 business days.",
+  keywords: ["wig return policy", "wig refund", "wig exchange", "wig quality guarantee", "Khair Wigs returns"],
+  openGraph: {
+    title: "Return Policy \u2014 14-Day Returns | Khair Wigs",
+    description: "14-day returns on standard collection. Quality guarantee on all pieces. Free defect repairs within 7 days.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: "Return Policy | Khair Wigs",
+    description: "14-day returns on standard collection. Quality guarantee on every piece.",
+  },
+};
 
 export default function Page() {
   return (

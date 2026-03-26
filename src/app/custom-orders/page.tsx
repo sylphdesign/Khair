@@ -1,4 +1,20 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Custom Wigs Made to Your Measurements \u2014 100+ Hours Hand-Tied | Khair Wigs",
+  description: "Order a custom luxury wig built to your exact head measurements, preferred density, length, texture, and color. Each piece hand-tied over 100+ hours. Delivered in 3\u201312 weeks.",
+  keywords: ["custom wig", "custom made wig", "bespoke wig", "wig made to order", "custom hair replacement", "personalized wig", "custom lace wig", "wig fitting", "BGH measurements"],
+  openGraph: {
+    title: "Custom Wigs Made to Your Measurements | Khair Wigs",
+    description: "Built to your exact dimensions, preferences, and specifications. Choose length, texture, color, and density. Delivered in 3\u201312 weeks.",
+    images: [{ url: "/og-custom.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: "Custom Wigs \u2014 Built to Your Specs | Khair Wigs",
+    description: "Your measurements. Your preferences. Hand-tied over 100+ hours and delivered in 3\u201312 weeks.",
+  },
+};
 
 export default function Page() {
   return (

@@ -1,4 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Privacy Policy | Khair Wigs",
+  description: "Khair Wigs privacy policy. Learn how we collect, use, and protect your personal information. We never sell or trade your data.",
+  openGraph: {
+    title: "Privacy Policy | Khair Wigs",
+    description: "How we handle your information and protect your privacy.",
+  },
+  twitter: {
+  },
+};
 
 export default function Page() {
   return (

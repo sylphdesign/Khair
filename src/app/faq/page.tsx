@@ -1,8 +1,28 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "FAQ \u2014 Wig Care, Custom Orders, Shipping & More | Khair Wigs",
+  description: "Answers to common questions about Khair luxury wigs: how realistic the scalp looks, custom order timelines (3\u201312 weeks), standard shipping (1\u20133 days), heat styling, measurements, and returns.",
+  keywords: ["wig FAQ", "luxury wig questions", "custom wig timeline", "wig shipping", "wig returns", "scalp simulation", "wig measurements", "wig heat styling", "alopecia wig FAQ", "chemo wig FAQ"],
+  openGraph: {
+    title: "Frequently Asked Questions | Khair Wigs",
+    description: "Everything you need to know about Khair wigs \u2014 from scalp realism and care to custom orders and international shipping.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: "FAQ | Khair Wigs",
+    description: "Common questions about our luxury hand-tied wigs, custom orders, shipping, and care.",
+  },
+};
 
 export default function Page() {
   return (
     <div className="page-wrapper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How realistic does the scalp look on a Khair wig?","acceptedAnswer":{"@type":"Answer","text":"Our proprietary Scalp Simulation Technology\u2122 replicates natural skin at the part line. Combined with strategically reduced density and individually placed baby hairs, the result is virtually undetectable \u2014 even at close range."}},{"@type":"Question","name":"How long will a Khair wig last?","acceptedAnswer":{"@type":"Answer","text":"With proper maintenance, significantly longer than mass-produced alternatives. The hand-knotted construction and premium hair grades are selected specifically for durability."}},{"@type":"Question","name":"Can I use heat tools and color a Khair wig?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 it's 100% human hair. Curling, straightening, blow-drying, and professional coloring all work. We recommend staying below 350\u00b0F with a heat protectant."}},{"@type":"Question","name":"What is the difference between standard and custom Khair wigs?","acceptedAnswer":{"@type":"Answer","text":"Standard collection pieces ship within 1\u20133 business days from existing inventory. Custom orders let you control every detail \u2014 length, texture, color, density, and exact cap dimensions \u2014 with a 3\u201312 week production window."}},{"@type":"Question","name":"How long does a custom wig order take?","acceptedAnswer":{"@type":"Answer","text":"Between 3 and 12 weeks from your final measurements, depending on complexity. Each custom piece is hand-built from scratch to your exact specifications."}},{"@type":"Question","name":"Does Khair Wigs ship internationally?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 we deliver to women in over 12 countries. All shipments are discreetly packaged with no indication of contents."}}]}) }}
+      />
 <section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; FAQ</p><h1>Frequently Asked <em>Questions</em></h1><p>Answers to the things people ask most.</p></div></section>
 <div className="sp-narrow">
 <p className="sp-rv">Can't find what you need? <Link href="/contact">Get in touch</Link> — we're glad to help.</p>

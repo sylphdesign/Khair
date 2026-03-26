@@ -1,8 +1,29 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Wig Measurement Guide \u2014 6-Point BGH System for Perfect Fit | Khair Wigs",
+  description: "Learn how to measure your head for a custom wig using Khair's 6-point BGH measurement system. Takes under 5 minutes. Includes standard reference sizes and video guides.",
+  keywords: ["wig measurement guide", "how to measure head for wig", "wig fitting guide", "BGH measurement system", "custom wig measurements", "head circumference wig", "wig cap size"],
+  openGraph: {
+    title: "Wig Measurement Guide \u2014 6-Point BGH System",
+    description: "Six measurements. Five minutes. A fit that disappears. Learn our BGH system for a perfect custom wig fit.",
+    images: [{ url: "/og-measurement.jpg", width: 1200, height: 630 }],
+    type: "article",
+  },
+  twitter: {
+    title: "Wig Measurement Guide | Khair Wigs",
+    description: "Our 6-point BGH system ensures a perfect, invisible fit. Takes under 5 minutes.",
+  },
+};
 
 export default function Page() {
   return (
     <div className="page-wrapper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"HowTo","name":"How to Measure Your Head for a Custom Wig","description":"Khair's 6-point BGH measurement system for a perfect custom wig fit. Takes under 5 minutes.","totalTime":"PT5M","tool":[{"@type":"HowToTool","name":"Soft fabric measuring tape"},{"@type":"HowToTool","name":"Mirror"}],"step":[{"@type":"HowToStep","name":"Circumference","text":"Measure around the full perimeter of your head, starting at center front hairline. Standard: 21 inches."},{"@type":"HowToStep","name":"Forehead to Nape","text":"From center front hairline, straight over the crown, down to the nape. Standard: 12.25 inches."},{"@type":"HowToStep","name":"Ear to Ear (Front)","text":"From in front of one ear, across the front hairline, to the other ear. Standard: 11 inches."},{"@type":"HowToStep","name":"Ear to Ear (Over Top)","text":"From top of one ear, over the highest point, to the other ear. Standard: 11.75 inches."},{"@type":"HowToStep","name":"Temple to Temple (Back)","text":"From one temple, around the back along the occipital bone, to the other. Standard: 14 inches."},{"@type":"HowToStep","name":"Nape Width","text":"Width of hairline at the base of the neck. Standard: 5 inches."}]}) }}
+      />
 <section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Measurement Guide</p><h1>Measurement <em>Guide</em></h1><p>Six points. Five minutes. A fit that disappears.</p></div></section>
 <div className="sp-wide"><div className="sp-mgrid">
 <div>

@@ -1,8 +1,28 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Contact Us \u2014 Free Private Wig Consultations | Khair Wigs",
+  description: "Book a free, private consultation with Khair Wigs. Every inquiry is handled with care and complete confidentiality. Email hello@khairwigs.com or use our contact form.",
+  keywords: ["contact Khair Wigs", "wig consultation", "book wig appointment", "wig fitting consultation", "private wig consultation", "free wig consultation"],
+  openGraph: {
+    title: "Contact Us \u2014 Free Private Consultations | Khair Wigs",
+    description: "Confidential consultations for women experiencing hair loss. No pressure, no judgment. Reach out anytime.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: "Contact Khair Wigs",
+    description: "Free, private consultations. Every inquiry handled with complete confidentiality.",
+  },
+};
 
 export default function Page() {
   return (
     <div className="page-wrapper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"ContactPage","name":"Contact Khair Wigs","url":"https://khairwigs.com/contact","mainEntity":{"@type":"Organization","name":"Khair Wigs","email":"hello@khairwigs.com","contactPoint":{"@type":"ContactPoint","email":"hello@khairwigs.com","contactType":"customer service","availableLanguage":"English","hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"]}}}}) }}
+      />
 <section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Contact Us</p><h1>Contact <em>Us</em></h1><p>Everything stays between us.</p></div></section>
 <div className="sp-wide"><div className="sp-cgrid">
 <div>

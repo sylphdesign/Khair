@@ -1,4 +1,16 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Terms of Service | Khair Wigs",
+  description: "Khair Wigs terms of service. Covers ordering, payments, custom orders, intellectual property, and governing law (State of Arizona).",
+  openGraph: {
+    title: "Terms of Service | Khair Wigs",
+    description: "Terms governing the use of Khair Wigs products and services.",
+  },
+  twitter: {
+  },
+};
 
 export default function Page() {
   return (

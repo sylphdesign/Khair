@@ -1,4 +1,21 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Our Story \u2014 15 Years of Personal Experience with Hair Loss | Khair Wigs",
+  description: "Khair Wigs was born from 15 years of personal hair loss experience. Our founder tested dozens of manufacturers to find the perfect production partner. Learn what drives our obsession with quality.",
+  keywords: ["Khair Wigs story", "about Khair Wigs", "hair loss journey", "women hair loss", "luxury wig brand", "wig founder story"],
+  openGraph: {
+    title: "Our Story \u2014 Born from 15 Years of Personal Experience",
+    description: "What happens when someone who's lived through hair loss decides no one else should settle. The story behind Khair Wigs.",
+    images: [{ url: "/og-story.jpg", width: 1200, height: 630 }],
+    type: "article",
+  },
+  twitter: {
+    title: "Our Story | Khair Wigs",
+    description: "Born from 15 years of personal hair loss experience and a refusal to settle for anything less than perfect.",
+  },
+};
 
 export default function Page() {
   return (

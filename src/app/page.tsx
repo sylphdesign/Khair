@@ -1,8 +1,28 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Khair Wigs \u2014 Hand-Tied Luxury Wigs for Women with Hair Loss",
+  description: "Hand-tied luxury wigs crafted over 100+ hours using premium virgin and European hair. Featuring Scalp Simulation Technology\u2122 for an undetectable finish. Free private consultations available.",
+  keywords: ["luxury wigs", "hand-tied wigs", "human hair wigs", "wigs for hair loss", "wigs for women", "alopecia wigs", "chemo wigs", "European hair wigs", "virgin hair wigs", "scalp simulation", "natural looking wigs", "Khair Wigs"],
+  openGraph: {
+    title: "Khair Wigs \u2014 Hand-Tied Luxury Wigs for Women with Hair Loss",
+    description: "~120,000 strands of premium virgin and European hair, hand-tied over 100+ hours with Scalp Simulation Technology\u2122. So realistic, no one will know but you.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: "Khair Wigs \u2014 Hand-Tied Luxury Wigs for Women",
+    description: "~120,000 strands of premium hair, hand-tied over 100+ hours with Scalp Simulation Technology\u2122. So realistic, no one will know but you.",
+  },
+};
 
 export default function Page() {
   return (
     <div className="page-wrapper">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"Khair Wigs","url":"https://khairwigs.com","logo":"https://khairwigs.com/logo.png","description":"Hand-tied luxury wigs for women experiencing hair loss. Each piece crafted over 100+ hours using premium virgin and European hair with Scalp Simulation Technology\u2122.","contactPoint":{"@type":"ContactPoint","email":"hello@khairwigs.com","contactType":"customer service","availableLanguage":"English"},"sameAs":["https://www.instagram.com/khairwigs","https://www.facebook.com/khairwigs","https://www.tiktok.com/@khairwigs"]}) }}
+      />
 {/*  HERO  */}
 <section className="hero" id="hero">
   <div className="hero-bg"></div>

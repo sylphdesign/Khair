@@ -1,4 +1,20 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: "Shipping Information \u2014 Discreet Delivery to 12+ Countries | Khair Wigs",
+  description: "Khair Wigs ships in unmarked packaging. Standard collection ships in 1\u20133 days. Domestic delivery in 2\u20137 business days. International shipping to 12+ countries. All tracked and insured.",
+  keywords: ["wig shipping", "discreet wig shipping", "wig delivery time", "international wig shipping", "luxury wig shipping", "wig tracking", "Khair Wigs shipping"],
+  openGraph: {
+    title: "Shipping Information \u2014 Discreet & Tracked | Khair Wigs",
+    description: "Unmarked packaging. Standard collection ships in 1\u20133 days. Priority and international options available. All tracked and insured.",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: "Shipping Info | Khair Wigs",
+    description: "Discreet packaging, fast shipping, tracked delivery to 12+ countries.",
+  },
+};
 
 export default function Page() {
   return (
