@@ -14,7 +14,7 @@ export default function Page() {
 <h2 className="sp-rv">Liability</h2><p className="sp-rv">To the extent allowed by law, Khair Wigs is not liable for indirect or consequential damages. Maximum liability is limited to the purchase price of the product in question.</p>
 <h2 className="sp-rv">Governing Law</h2><p className="sp-rv">Governed by the laws of the State of Arizona. Disputes shall be resolved in Maricopa County courts.</p>
 </div>
-<div className="sp-cta"><div><h2>Questions About <em>Terms?</em></h2><p>We're happy to clarify anything.</p><Link href="/contact"><span>Get in Touch</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>Questions About <em>Terms?</em></h2><p>We're happy to clarify anything.</p><Link href="/contact"><span>Get in Touch</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }

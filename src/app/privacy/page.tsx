@@ -16,7 +16,7 @@ export default function Page() {
 <h2 className="sp-rv">Your Rights</h2><p className="sp-rv">Access, correct, or delete your data at any time. Opt out of marketing with one click. Email hello@khairwigs.com for any data requests.</p>
 <h2 className="sp-rv">Cookies</h2><p className="sp-rv">Used for site functionality and analytics. Manage preferences through your browser settings.</p>
 </div>
-<div className="sp-cta"><div><h2>Your Privacy is <em>Sacred</em></h2><p>Questions about how we handle your data? We're happy to answer.</p><Link href="/contact"><span>Contact Us</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>Your Privacy is <em>Sacred</em></h2><p>Questions about how we handle your data? We're happy to answer.</p><Link href="/contact"><span>Contact Us</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }

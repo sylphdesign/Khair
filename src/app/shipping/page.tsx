@@ -24,7 +24,7 @@ export default function Page() {
 <p className="sp-rv">We'll notify you at every milestone: confirmation, production start, quality review, and shipment.</p>
 <div className="sp-card sp-rv" style={{marginTop: '50px'}}><h3>Shipping Question?</h3><p>Our team responds within 24 hours, Monday through Friday.</p><Link href="/contact">Reach Shipping Support →</Link></div>
 </div>
-<div className="sp-cta"><div><h2>Discreet from Start <em>to Finish</em></h2><p>Your privacy matters at every step.</p><Link href="/contact"><span>Contact Us</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>Discreet from Start <em>to Finish</em></h2><p>Your privacy matters at every step.</p><Link href="/contact"><span>Contact Us</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }

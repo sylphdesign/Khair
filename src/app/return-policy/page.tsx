@@ -13,7 +13,7 @@ export default function Page() {
 <h2 className="sp-rv">Refunds</h2><p className="sp-rv">Approved returns are processed to the original payment method within 10 business days. Shipping costs are non-refundable unless the issue is on our end.</p>
 <h2 className="sp-rv">Exchanges</h2><p className="sp-rv">Available on standard collection pieces within 14 days, same condition requirements. Price differences are charged or refunded accordingly.</p>
 </div>
-<div className="sp-cta"><div><h2>We Stand Behind <em>Every Piece</em></h2><p>Satisfaction isn't optional — it's the whole point.</p><Link href="/contact"><span>Contact Us</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>We Stand Behind <em>Every Piece</em></h2><p>Satisfaction isn't optional — it's the whole point.</p><Link href="/contact"><span>Contact Us</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }

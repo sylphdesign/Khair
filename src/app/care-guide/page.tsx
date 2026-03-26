@@ -26,7 +26,7 @@ export default function Page() {
 <ul className="sp-rv"><li>Sulfates and harsh detergents</li><li>Cotton pillowcases without a protective layer</li><li>Heat above 350°F / 175°C</li><li>Chlorine or saltwater without protection</li><li>Pulling or tugging at the lace edges</li><li>Storing in plastic bags (traps moisture)</li></ul>
 <div className="sp-card sp-rv" style={{marginTop: '50px'}}><h3>Have Questions?</h3><p>We offer one-on-one care sessions for every Khair owner — just reach out.</p><Link href="/contact">Talk to Our Care Team →</Link></div>
 </div>
-<div className="sp-cta"><div><h2>Invest in What <em>Matters</em></h2><p>Proper care keeps your piece looking flawless, wear after wear.</p><Link href="/contact"><span>Get Personalized Care Advice</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>Invest in What <em>Matters</em></h2><p>Proper care keeps your piece looking flawless, wear after wear.</p><Link href="/contact"><span>Get Personalized Care Advice</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }
