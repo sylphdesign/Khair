@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(doctl account:*)",
+      "Bash(doctl compute:*)",
+      "Bash(git init:*)",
+      "Bash(git:*)",
+      "Bash(gh repo:*)",
+      "Bash(doctl apps:*)"
+    ]
+  }
+}
