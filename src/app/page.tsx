@@ -33,11 +33,11 @@ export default function Page() {
     <h1 className="hero-title">Your Hair Didn't<br />Define You.<br /><em>Until You Lost It.</em></h1>
     <p className="hero-subtitle">~120,000 strands of top-quality virgin and European hair, hand-tied over 100+ hours with Scalp Simulation Technology™ so realistic — no one will know but you.</p>
     <div className="hero-actions">
-      <a href="#collection" className="btn-primary">
+      <Link href="/collection" className="btn-primary">
         <span>Explore Collection</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#cta" className="btn-secondary">Book a Consultation</a>
+      </Link>
+      <Link href="/contact" className="btn-secondary">Book a Consultation</Link>
     </div>
   </div>
   <div className="hero-visual">
@@ -156,7 +156,7 @@ export default function Page() {
     </div>
   </div>
   <div className="collection-cta reveal">
-    <a href="#" className="btn-primary" style={{background: 'var(--espresso)', color: 'var(--cream)'}}>
+    <Link href="/collection" className="btn-primary" style={{background: 'var(--espresso)', color: 'var(--cream)'}}>
       <span>View All Styles</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -292,11 +292,11 @@ export default function Page() {
     <h2 className="section-title reveal delay-1">You've Waited<br /><em>Long Enough.</em></h2>
     <p className="section-desc reveal delay-2">We don't believe in rushing craftsmanship. We don't mass-produce. We don't rush. Each Khair wig is crafted to our exact specifications with thoughtful attention to every detail and the level of care you deserve.</p>
     <div className="cta-actions reveal delay-3">
-      <a href="#" className="btn-primary">
+      <Link href="/collection" className="btn-primary">
         <span>Shop the Collection</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#" className="btn-secondary" style={{color: 'var(--cream-dark)', borderColor: 'rgba(196,162,101,0.3)'}}>Book a Free Consultation</a>
+      </Link>
+      <Link href="/contact" className="btn-secondary" style={{color: 'var(--cream-dark)', borderColor: 'rgba(196,162,101,0.3)'}}>Book a Free Consultation</Link>
     </div>
     <div className="cta-trust reveal delay-4">
       <span>Discreet Shipping</span>

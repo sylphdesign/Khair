@@ -1,0 +1,71 @@
+{
+  "name": "Khair Contact Form to Gmail",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "khair-contact-form",
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "id": "e2154426-11f8-48b2-b4c4-7b7189f3afb5",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        380,
+        240
+      ],
+      "webhookId": "khair-contact-form-webhook-id"
+    },
+    {
+      "parameters": {
+        "sendTo": "sylphdesign@gmail.com",
+        "subject": "={{ 'Khair Contact: ' + $json.body.subject + ' from ' + $json.body.firstName + ' ' + $json.body.lastName }}",
+        "emailType": "text",
+        "message": "={{ 'New Message Received from KhairWigs.com\\n\\nName: ' + $json.body.firstName + ' ' + $json.body.lastName + '\\nEmail: ' + $json.body.email + '\\nSubject: ' + $json.body.subject + '\\n\\nMessage:\\n' + $json.body.message + '\\n' }}",
+        "options": {
+          "replyTo": "={{$json.body.email}}"
+        }
+      },
+      "id": "a4ecdb36-2394-436f-b2a8-1b6fb92da493",
+      "name": "Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        680,
+        240
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "your-gmail-credential-id",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f1d4eb3d-82d2-4d2d-abfa-3e5fccf4c4eb",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "khair-contact-form-workflow",
+  "tags": []
+}

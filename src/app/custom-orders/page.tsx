@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="page-wrapper">
-<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Custom Orders</p><h1>Custom <em>Orders</em></h1><p>Designed around your measurements, your preferences, your life.</p></div></section>
+<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/">Home</Link> &nbsp;/&nbsp; Custom Orders</p><h1>Custom <em>Orders</em></h1><p>Designed around your measurements, your preferences, your life.</p></div></section>
 <div className="sp-wide"><div className="sp-mgrid">
 <div>
 <h2 className="sp-rv" style={{marginTop: '0'}}>How It <em style={{fontStyle: 'italic', color: 'var(--sage)'}}>Works</em></h2>

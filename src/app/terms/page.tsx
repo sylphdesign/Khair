@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="page-wrapper">
-<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Terms of Service</p><h1>Terms of <em>Service</em></h1><p>The ground rules for using Khair Wigs products and services.</p></div></section>
+<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/">Home</Link> &nbsp;/&nbsp; Terms of Service</p><h1>Terms of <em>Service</em></h1><p>The ground rules for using Khair Wigs products and services.</p></div></section>
 <div className="sp-narrow">
 <p className="sp-lu">Last updated: March 1, 2026</p>
 <p className="sp-rv">By using our website or placing an order, you agree to the following.</p>

@@ -23,7 +23,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"CollectionPage","name":"Khair Wigs Collection","description":"Hand-tied luxury wigs in straight, wavy, and curly styles using premium virgin and European hair.","url":"https://khairwigs.com/collection","isPartOf":{"@type":"WebSite","name":"Khair Wigs","url":"https://khairwigs.com"}}) }}
       />
-<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Collection</p><h1>Our <em>Collection</em></h1><p>Pieces designed to disappear — so only you remain.</p></div></section>
+<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/">Home</Link> &nbsp;/&nbsp; Collection</p><h1>Our <em>Collection</em></h1><p>Pieces designed to disappear — so only you remain.</p></div></section>
 <div className="sp-wide">
 <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '50px', flexWrap: 'wrap', gap: '20px'}}>
 <div><h2 style={{margin: '0', fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: '300', color: 'var(--espresso)'}}>Signature <em style={{fontStyle: 'italic', color: 'var(--sage)'}}>Pieces</em></h2>

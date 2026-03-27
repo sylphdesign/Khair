@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="page-wrapper">
-<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Shipping Info</p><h1>Shipping <em>Information</em></h1><p>Plain packaging. Reliable tracking. Complete peace of mind.</p></div></section>
+<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/">Home</Link> &nbsp;/&nbsp; Shipping Info</p><h1>Shipping <em>Information</em></h1><p>Plain packaging. Reliable tracking. Complete peace of mind.</p></div></section>
 <div className="sp-narrow">
 <p className="sp-rv">We put as much thought into delivery as we do into the wigs themselves.</p>
 <div className="sp-hr sp-rv"></div>

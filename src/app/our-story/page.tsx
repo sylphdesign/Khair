@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="page-wrapper">
-<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Our Story</p><h1>Our <em>Story</em></h1><p>What happens when someone who's lived it decides no one else should settle.</p></div></section>
+<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/">Home</Link> &nbsp;/&nbsp; Our Story</p><h1>Our <em>Story</em></h1><p>What happens when someone who's lived it decides no one else should settle.</p></div></section>
 <div className="sp-narrow">
 <div className="sp-rv"><h2 style={{marginTop: '0'}}>Where It Started</h2>
 <p>Khair didn't begin as a brand. It began in a bathroom mirror. Our founder spent over fifteen years navigating hair loss — the disappointing wigs, the well-meaning but useless advice, the quiet feeling that nothing available was made with her in mind.</p>

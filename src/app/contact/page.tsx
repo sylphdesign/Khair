@@ -24,7 +24,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"ContactPage","name":"Contact Khair Wigs","url":"https://khairwigs.com/contact","mainEntity":{"@type":"Organization","name":"Khair Wigs","email":"hello@khairwigs.com","contactPoint":{"@type":"ContactPoint","email":"hello@khairwigs.com","contactType":"customer service","availableLanguage":"English","hoursAvailable":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"]}}}}) }}
       />
-<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/home">Home</Link> &nbsp;/&nbsp; Contact Us</p><h1>Contact <em>Us</em></h1><p>Everything stays between us.</p></div></section>
+<section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/">Home</Link> &nbsp;/&nbsp; Contact Us</p><h1>Contact <em>Us</em></h1><p>Everything stays between us.</p></div></section>
 <div className="sp-wide"><div className="sp-cgrid">
 <div>
 <h2 className="sp-rv" style={{marginTop: '0'}}>We're <em style={{fontStyle: 'italic', color: 'var(--sage)'}}>Here</em></h2>
