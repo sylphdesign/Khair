@@ -5,16 +5,16 @@ import { ProductCard } from '@/components/ProductCard';
 
 export const metadata: Metadata = {
   title: "Luxury Wig Collection \u2014 Hand-Tied European & Virgin Hair | Khair Wigs",
-  description: "Browse Khair's signature collection of hand-tied luxury wigs. European Silky Straight, Natural Body Wave, Deep Curl, and more \u2014 all featuring full lace and Scalp Simulation Technology\u2122. Ships in 1\u20133 days.",
-  keywords: ["luxury wig collection", "European hair wigs", "virgin hair wigs", "silky straight wig", "body wave wig", "deep curl wig", "full lace wig", "hand-tied wig", "buy luxury wig"],
+  description: "Browse Khair's signature collection of hand-tied luxury wigs \u2014 Alisha and Amara, 18\" full lace pieces in 100% European hair, each featuring Scalp Simulation Technology\u2122. Ships in 1\u20133 days.",
+  keywords: ["luxury wig collection", "European hair wigs", "virgin hair wigs", "silky straight wig", "full lace wig", "hand-tied wig", "scalp simulation wig", "buy luxury wig"],
   openGraph: {
     title: "Luxury Wig Collection \u2014 Hand-Tied European & Virgin Hair",
-    description: "Signature pieces designed to disappear \u2014 so only you remain. Straight, wavy, and curly styles available. Ships in 1\u20133 business days.",
+    description: "Signature pieces designed to disappear \u2014 so only you remain. Hand-tied full lace in silky straight European hair. Ships in 1\u20133 business days.",
     images: [{ url: "/og-collection.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     title: "Luxury Wig Collection | Khair Wigs",
-    description: "Hand-tied European and virgin hair wigs. Straight, wavy, and curly styles. Ships in 1\u20133 days.",
+    description: "Hand-tied full lace wigs in silky straight European hair, with Scalp Simulation Technology\u2122. Ships in 1\u20133 days.",
   },
 };
 
@@ -23,7 +23,7 @@ export default function Page() {
     <div className="page-wrapper">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"CollectionPage","name":"Khair Wigs Collection","description":"Hand-tied luxury wigs in straight, wavy, and curly styles using premium virgin and European hair.","url":"https://khairwigs.com/collection","isPartOf":{"@type":"WebSite","name":"Khair Wigs","url":"https://khairwigs.com"},"mainEntity":{"@type":"ItemList","itemListElement":products.map((p, i) => ({"@type":"ListItem","position":i+1,"url":`https://khairwigs.com/collection/${p.slug}/`,"name":p.name}))}}) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"CollectionPage","name":"Khair Wigs Collection","description":"Hand-tied full lace wigs in silky straight European hair, featuring Scalp Simulation Technology™.","url":"https://khairwigs.com/collection","isPartOf":{"@type":"WebSite","name":"Khair Wigs","url":"https://khairwigs.com"},"mainEntity":{"@type":"ItemList","itemListElement":products.map((p, i) => ({"@type":"ListItem","position":i+1,"url":`https://khairwigs.com/collection/${p.slug}/`,"name":p.name}))}}) }}
       />
 <section className="sp-hero"><div className="hero-grain"></div><div className="sp-hero-in"><p className="sp-bc"><Link href="/">Home</Link> &nbsp;/&nbsp; Collection</p><h1>Our <em>Collection</em></h1><p>Pieces designed to disappear — so only you remain.</p></div></section>
 <div className="sp-wide">

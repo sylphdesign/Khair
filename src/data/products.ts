@@ -155,9 +155,13 @@ export function getProduct(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
 
+/**
+ * Derived from the catalogue rather than hardcoded, so the filter bar never
+ * offers a style we don't currently carry. Ordered Straight → Wavy → Curly.
+ */
+const CATEGORY_ORDER: ProductCategory[] = ['Straight', 'Wavy', 'Curly'];
+
 export const categories: Array<ProductCategory | 'All'> = [
   'All',
-  'Straight',
-  'Wavy',
-  'Curly',
+  ...CATEGORY_ORDER.filter((c) => products.some((p) => p.category === c)),
 ];
