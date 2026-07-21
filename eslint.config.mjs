@@ -18,7 +18,11 @@ const eslintConfig = [
     // lazy loading and CLS are already handled.
     // NB: the brackets in [slug] must be escaped — unescaped they parse as a
     // glob character class and never match the literal directory name.
-    files: ["src/components/ProductCard.tsx", "src/app/collection/\\[slug\\]/page.tsx"],
+    files: [
+      "src/components/ProductCard.tsx",
+      "src/components/ProductGallery.tsx",
+      "src/app/collection/\\[slug\\]/page.tsx",
+    ],
     rules: { "@next/next/no-img-element": "off" },
   },
   {

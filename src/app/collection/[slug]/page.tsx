@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { products, getProduct } from '@/data/products';
+import ProductGallery from '@/components/ProductGallery';
 
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
@@ -52,8 +53,6 @@ export default async function Page({
   const product = getProduct(slug);
   if (!product) notFound();
 
-  const [cover, ...rest] = product.images;
-
   return (
     <div className="page-wrapper">
       <script
@@ -93,29 +92,7 @@ export default async function Page({
 
       <div className="sp-wide">
         <div className="pd-layout">
-          <div className="pd-gallery sp-rv">
-            {cover && (
-              <img
-                className="pd-cover"
-                src={cover.src}
-                alt={cover.alt}
-                decoding="async"
-              />
-            )}
-            {rest.length > 0 && (
-              <div className="pd-thumbs">
-                {rest.map((img) => (
-                  <img
-                    key={img.src}
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ))}
-              </div>
-            )}
-          </div>
+          <ProductGallery images={product.images} productName={product.name} />
 
           <div className="pd-detail sp-rv">
             <p className="pd-eyebrow">{product.category} · Hand-Tied</p>

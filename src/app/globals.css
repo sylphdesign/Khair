@@ -1412,12 +1412,77 @@ a.sp-pcard, a.collection-card { display: block; color: inherit; }
 /* Product detail */
 .pd-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: start; }
 .pd-cover { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: var(--cream); }
-.pd-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
-.pd-thumbs img {
-  width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
-  background: var(--cream); transition: opacity .4s var(--ease-out-expo);
+.pd-cover-btn {
+  display: block; width: 100%; padding: 0; border: none; background: none;
+  position: relative; cursor: zoom-in; overflow: hidden;
 }
-.pd-thumbs img:hover { opacity: .8; }
+.pd-zoom-hint {
+  position: absolute; bottom: 16px; right: 16px; display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 15px; background: rgba(40,30,29,.72); color: var(--cream);
+  font-size: .62rem; letter-spacing: .18em; text-transform: uppercase;
+  opacity: 0; transform: translateY(6px); transition: all .4s var(--ease-out-expo);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); pointer-events: none;
+}
+.pd-zoom-hint svg { width: 15px; height: 15px; }
+.pd-cover-btn:hover .pd-zoom-hint,
+.pd-cover-btn:focus-visible .pd-zoom-hint { opacity: 1; transform: translateY(0); }
+
+.pd-thumbs { display: flex; gap: 10px; margin-top: 10px; }
+.pd-thumb {
+  flex: 1 1 0; min-width: 0; max-width: 120px; padding: 0; border: none;
+  background: none; cursor: pointer; position: relative; line-height: 0;
+}
+.pd-thumb img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
+  background: var(--cream); opacity: .5;
+  transition: opacity .4s var(--ease-out-expo);
+}
+.pd-thumb:hover img, .pd-thumb:focus-visible img { opacity: .8; }
+.pd-thumb.on img { opacity: 1; }
+/* Underline rather than a ring, so the thumbnail image is never cropped. */
+.pd-thumb::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
+  background: var(--gold); transform: scaleX(0);
+  transition: transform .4s var(--ease-out-expo);
+}
+.pd-thumb.on::after { transform: scaleX(1); }
+
+/* Lightbox */
+.pd-lb {
+  position: fixed; inset: 0; z-index: 10001;
+  background: rgba(24,18,17,.94);
+  display: flex; align-items: center; justify-content: center;
+  padding: 60px 20px 70px;
+  animation: fadeIn .3s var(--ease-out-expo);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+}
+.pd-lb-img {
+  max-width: 100%; max-height: 100%; width: auto; height: auto;
+  object-fit: contain; cursor: zoom-in;
+  transition: transform .45s var(--ease-out-expo);
+  box-shadow: 0 24px 70px rgba(0,0,0,.5);
+}
+.pd-lb-img.zoomed { transform: scale(2); cursor: zoom-out; transition: transform .3s var(--ease-out-expo); }
+.pd-lb-close, .pd-lb-nav {
+  position: absolute; z-index: 2; display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; border: 1px solid rgba(232,226,216,.22);
+  background: rgba(40,30,29,.55); color: var(--cream); cursor: pointer;
+  transition: all .3s var(--ease-out-expo);
+}
+.pd-lb-close:hover, .pd-lb-nav:hover { background: var(--gold); color: var(--espresso); border-color: var(--gold); }
+.pd-lb-close svg, .pd-lb-nav svg { width: 20px; height: 20px; }
+.pd-lb-close { top: 20px; right: 20px; }
+.pd-lb-nav.prev { left: 20px; top: 50%; margin-top: -23px; }
+.pd-lb-nav.next { right: 20px; top: 50%; margin-top: -23px; }
+/* Sits above the image, which overflows its box once zoomed. */
+.pd-lb-meta {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 2; margin: 0; padding: 8px 18px;
+  font-size: .66rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--cream); background: rgba(24,18,17,.92);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  pointer-events: none; white-space: nowrap;
+}
 .pd-eyebrow {
   font-size: .7rem; letter-spacing: .3em; text-transform: uppercase;
   color: var(--gold); margin-bottom: 14px;
@@ -1454,5 +1519,14 @@ a.sp-pcard, a.collection-card { display: block; color: inherit; }
 
 /* Responsive for sub-pages */
 @media(max-width:1024px){.sp-hero{padding:220px 30px 60px}.sp-narrow,.sp-wide{padding:60px 30px}.sp-pgrid{grid-template-columns:repeat(2,1fr)}.sp-cgrid,.sp-mgrid{grid-template-columns:1fr}.sp-cta{padding:60px 30px}.pd-layout{grid-template-columns:1fr;gap:45px}}
-@media(max-width:768px){.sp-hero{padding:180px 20px 50px}.sp-narrow,.sp-wide{padding:50px 20px}.sp-pgrid{grid-template-columns:1fr;max-width:400px}.sp-cta{padding:50px 20px}.pd-title{font-size:1.9rem}.pd-specs{grid-template-columns:1fr}.pd-actions{flex-direction:column;align-items:flex-start;gap:20px}}
+@media(max-width:768px){.sp-hero{padding:180px 20px 50px}.sp-narrow,.sp-wide{padding:50px 20px}.sp-pgrid{grid-template-columns:1fr;max-width:400px}.sp-cta{padding:50px 20px}.pd-title{font-size:1.9rem}.pd-specs{grid-template-columns:1fr}.pd-actions{flex-direction:column;align-items:flex-start;gap:20px}
+  /* Touch has no hover, so the zoom affordance stays visible. */
+  .pd-zoom-hint{opacity:1;transform:none}
+  .pd-lb{padding:56px 10px 62px}
+  .pd-lb-nav.prev{left:8px}.pd-lb-nav.next{right:8px}
+  .pd-lb-close{top:12px;right:12px}
+  .pd-lb-meta{white-space:normal;max-width:calc(100vw - 32px);font-size:.58rem;letter-spacing:.14em}
+}
+/* The custom cursor sits above the lightbox otherwise. */
+.pd-lb ~ .custom-cursor, body:has(.pd-lb) .custom-cursor { display: none; }
 
