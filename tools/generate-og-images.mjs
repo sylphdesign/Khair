@@ -1,7 +1,12 @@
 /**
- * Regenerates the social-share images in public/ (og-*.jpg + logo.png).
+ * Regenerates the social-share images in public/:
+ *   - og-*.jpg + logo.png            one per marketing page
+ *   - products/<slug>/og.jpg         one per product, generated from products.ts
  *
- * Run it whenever the cards' copy or photography changes:
+ * Product cards are data-driven, so a new entry in products.ts gets a card
+ * automatically — nothing here needs editing.
+ *
+ * Run it whenever copy, products, or photography change:
  *   npm run dev              # in another shell — the templates load /Khair.svg
  *   npm i --no-save playwright && npx playwright install chromium
  *   node tools/generate-og-images.mjs
@@ -12,6 +17,7 @@
 import { chromium } from 'playwright';
 import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+import { products } from '../src/data/products.ts';
 
 const ORIGIN = process.env.OG_ORIGIN ?? 'http://localhost:3000';
 const TEMPLATE_DIR = 'public/__og';
@@ -36,7 +42,7 @@ body{width:1200px;height:630px;overflow:hidden;background:#281e1d;display:flex;f
 h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:64px;line-height:1.08;color:#E8E2D8}
 h1 em{font-style:italic;color:#C4A265;display:block}
 .rule{width:64px;height:1px;background:#C4A265;margin:26px 0 20px;opacity:.6}
-.sub{font-size:17px;line-height:1.55;color:#D4CCC0;font-weight:300;max-width:440px}
+.sub{font-size:17px;line-height:1.55;color:#D4CCC0;font-weight:300;max-width:560px;text-wrap:balance}
 .right{width:38%;position:relative;overflow:hidden}
 .right img{width:100%;height:100%;object-fit:cover;display:block}
 .right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#281e1d 0%,rgba(40,30,29,.45) 22%,transparent 55%)}
@@ -50,25 +56,53 @@ const logoCard = `<!doctype html><html><head><meta charset="utf-8"><style>
 .logo{width:440px;height:200px;background-color:#E8E2D8;-webkit-mask:url('/Khair.svg') no-repeat center/contain;mask:url('/Khair.svg') no-repeat center/contain}
 </style></head><body><div class="logo"></div></body></html>`;
 
+/** One landscape card per product, so shares aren't a centre-cropped 3:4 photo. */
+const productCards = products
+  .filter((p) => p.images.length > 0)
+  .map((p) => ({
+    template: `product-${p.slug}`,
+    out: `public/products/${p.slug}/og.jpg`,
+    html: card(
+      `${p.category} · Hand-Tied`,
+      p.name,
+      p.specs.find((s) => s.label === 'Texture')?.value ?? 'Full Lace',
+      p.specLine,
+      p.images[0].src,
+    ),
+  }));
+
+const pageCards = CARDS.map(([name, ...rest]) => ({
+  template: name,
+  out: `public/${name}.jpg`,
+  html: card(...rest),
+}));
+
 mkdirSync(TEMPLATE_DIR, { recursive: true });
 mkdirSync('/tmp/og-out', { recursive: true });
-for (const [name, ...rest] of CARDS) writeFileSync(`${TEMPLATE_DIR}/${name}.html`, card(...rest));
+for (const c of [...pageCards, ...productCards]) {
+  writeFileSync(`${TEMPLATE_DIR}/${c.template}.html`, c.html);
+}
 writeFileSync(`${TEMPLATE_DIR}/logo.html`, logoCard);
+
+const jobs = [
+  ...pageCards.map((c) => ({ ...c, w: 1200, h: 630, fmt: 'jpeg' })),
+  ...productCards.map((c) => ({ ...c, w: 1200, h: 630, fmt: 'jpeg' })),
+  { template: 'logo', out: 'public/logo.png', w: 600, h: 600, fmt: 'png' },
+];
 
 const browser = await chromium.launch();
 try {
-  for (const [name, w, h] of [...CARDS.map(c => [c[0], 1200, 630]), ['logo', 600, 600]]) {
+  for (const { template, out, w, h, fmt } of jobs) {
     const page = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
-    await page.goto(`${ORIGIN}/__og/${name}.html`, { waitUntil: 'networkidle' });
+    await page.goto(`${ORIGIN}/__og/${template}.html`, { waitUntil: 'networkidle' });
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(600);
-    await page.screenshot({ path: `/tmp/og-out/${name}.png` });
+    await page.screenshot({ path: `/tmp/og-out/${template}.png` });
     await page.close();
 
-    const out = name === 'logo' ? 'public/logo.png' : `public/${name}.jpg`;
-    const args = name === 'logo'
-      ? ['-s', 'format', 'png', `/tmp/og-out/${name}.png`, '--out', out]
-      : ['-s', 'format', 'jpeg', '-s', 'formatOptions', '78', `/tmp/og-out/${name}.png`, '--out', out];
+    const args = fmt === 'png'
+      ? ['-s', 'format', 'png', `/tmp/og-out/${template}.png`, '--out', out]
+      : ['-s', 'format', 'jpeg', '-s', 'formatOptions', '78', `/tmp/og-out/${template}.png`, '--out', out];
     execFileSync('sips', args, { stdio: 'ignore' });
     console.log('wrote', out);
   }

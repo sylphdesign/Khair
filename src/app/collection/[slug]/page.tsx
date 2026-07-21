@@ -18,7 +18,11 @@ export async function generateMetadata({
   if (!product) return {};
 
   const title = `${product.name} — ${product.specLine} | Khair Wigs`;
-  const cover = product.images[0]?.src;
+  /* A dedicated 1200x630 card rather than the 3:4 product photo, which social
+     platforms centre-crop. Built by tools/generate-og-images.mjs. */
+  const share = product.images.length
+    ? { url: `/products/${product.slug}/og.jpg`, width: 1200, height: 630 }
+    : undefined;
 
   return {
     title,
@@ -34,12 +38,12 @@ export async function generateMetadata({
     openGraph: {
       title: `${product.name} — Hand-Tied Full Lace Wig`,
       description: product.tagline,
-      ...(cover ? { images: [{ url: cover }] } : {}),
+      ...(share ? { images: [share] } : {}),
     },
     twitter: {
       title: `${product.name} | Khair Wigs`,
       description: product.tagline,
-      ...(cover ? { images: [cover] } : {}),
+      ...(share ? { images: [share.url] } : {}),
     },
   };
 }
