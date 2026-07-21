@@ -39,7 +39,7 @@ export default function Page() {
 <ContactForm />
 </div>
 </div></div>
-<div className="sp-cta"><div><h2>We're <em>Listening</em></h2><p>No question is too small. No timeline too early.</p><Link href="/contact"><span>Book a Free Consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>We're <em>Listening</em></h2><p>No question is too small. No timeline too early.</p><Link href="/contact" className="sp-btn"><span>Book a Free Consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }

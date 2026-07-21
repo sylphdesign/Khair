@@ -159,7 +159,7 @@ export default function Page() {
     <Link href="/collection" className="btn-primary" style={{background: 'var(--espresso)', color: 'var(--cream)'}}>
       <span>View All Styles</span>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    </Link>
   </div>
 </section>
 

@@ -40,9 +40,9 @@ export default function Page() {
 <div className="sp-pcard sp-rv" data-cat="Curly"><div className="sp-pimg"><div className="sp-iph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Product</span></div></div><div className="sp-pinfo"><h3>Romantic Loose Curl</h3><p>20" · Custom Color · 130% Density</p><p style={{fontSize: '.75rem', color: 'var(--text-light)'}}>Full Lace · Hand-Tied Throughout</p></div></div>
 </div>
 <div style={{textAlign: 'center', marginTop: '60px'}} className="sp-rv"><p style={{fontSize: '.9rem', color: 'var(--text-med)', maxWidth: '500px', margin: '0 auto 25px'}}>Looking for something that isn't here? Every piece can be tailored — length, color, density, and cap dimensions.</p>
-<Link href="/custom-orders"><span>Start a Custom Order</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div>
+<Link href="/custom-orders" className="sp-btn"><span>Start a Custom Order</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div>
 </div>
-<div className="sp-cta"><div><h2>Ready to See the <em>Difference?</em></h2><p>It starts with a private, no-pressure conversation.</p><Link href="/contact"><span>Book a Free Consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>Ready to See the <em>Difference?</em></h2><p>It starts with a private, no-pressure conversation.</p><Link href="/contact" className="sp-btn"><span>Book a Free Consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }

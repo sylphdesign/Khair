@@ -32,7 +32,7 @@ export default function Page() {
 <div className="sp-card sp-rv"><h3>Standard BGH Reference</h3><p style={{fontSize: '.85rem', color: 'var(--text-med)', lineHeight: '1.8'}}>Circumference: 21" · Forehead to Nape: 12.25"<br />Ear to Ear (front): 11" · Ear to Ear (over top): 11.75"<br />Temple to Temple: 14" · Nape: 5"</p>
 <Link href="/measurement-guide">Full Measurement Guide →</Link></div></div>
 </div></div>
-<div className="sp-cta"><div><h2>Your Perfect Fit <em>Awaits</em></h2><p>Let's talk about what you need — we'll handle the rest.</p><Link href="/contact"><span>Schedule Your Consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>Your Perfect Fit <em>Awaits</em></h2><p>Let's talk about what you need — we'll handle the rest.</p><Link href="/contact" className="sp-btn"><span>Schedule Your Consultation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }

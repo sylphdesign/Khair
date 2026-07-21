@@ -41,7 +41,7 @@ export default function Page() {
 <div className="sp-card"><h3>Zero Compromise</h3><p>Fifteen years of firsthand experience behind every decision. We'd rather delay than deliver something subpar.</p></div>
 </div></div>
 </div>
-<div className="sp-cta"><div><h2>Every Wig Tells <em>a Story</em></h2><p>Let us help you write the next chapter of yours.</p><Link href="/contact"><span>Start the Conversation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
+<div className="sp-cta"><div><h2>Every Wig Tells <em>a Story</em></h2><p>Let us help you write the next chapter of yours.</p><Link href="/contact" className="sp-btn"><span>Start the Conversation</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link></div></div>
     </div>
   );
 }
