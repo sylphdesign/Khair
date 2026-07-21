@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { products } from '@/data/products';
+import { FeaturedProductCard } from '@/components/ProductCard';
 
 export const metadata: Metadata = {
   title: "Khair Wigs \u2014 Hand-Tied Luxury Wigs for Women with Hair Loss",
@@ -103,57 +105,9 @@ export default function Page() {
     <p className="section-desc">Each piece is thoughtfully designed based on 15 years of firsthand experience with hair loss. Each unit is crafted to our precise standards using premium virgin and European hair, enhanced with Scalp Simulation Technology™ for the most natural appearance.</p>
   </div>
   <div className="collection-grid">
-    <div className="collection-card reveal delay-1">
-      <div className="collection-card-image">
-        <div className="collection-card-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Product Image</span>
-        </div>
-        <div className="collection-card-overlay"></div>
-        <div className="collection-card-info">
-          <h3>European Silky Straight</h3>
-          <p>18" · Color 1B Natural Virgin · 130% Density</p>
-        </div>
-      </div>
-      <div className="collection-card-bottom">
-        <h3>European Silky Straight</h3>
-        <p>Full Lace · Scalp Simulation Technology™</p>
-      </div>
-    </div>
-    <div className="collection-card reveal delay-2">
-      <div className="collection-card-image">
-        <div className="collection-card-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Product Image</span>
-        </div>
-        <div className="collection-card-overlay"></div>
-        <div className="collection-card-info">
-          <h3>Natural Body Wave</h3>
-          <p>20" · Custom Color Match · 150% Density</p>
-        </div>
-      </div>
-      <div className="collection-card-bottom">
-        <h3>Natural Body Wave</h3>
-        <p>Full Lace · Custom Fit</p>
-      </div>
-    </div>
-    <div className="collection-card reveal delay-3">
-      <div className="collection-card-image">
-        <div className="collection-card-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span>Product Image</span>
-        </div>
-        <div className="collection-card-overlay"></div>
-        <div className="collection-card-info">
-          <h3>Deep Curl Luxury</h3>
-          <p>22" · Virgin European · 130% Density</p>
-        </div>
-      </div>
-      <div className="collection-card-bottom">
-        <h3>Deep Curl Luxury</h3>
-        <p>Full Lace · Baby Hair Detail</p>
-      </div>
-    </div>
+    {products.slice(0, 3).map((p, i) => (
+      <FeaturedProductCard key={p.slug} product={p} delay={i + 1} />
+    ))}
   </div>
   <div className="collection-cta reveal">
     <Link href="/collection" className="btn-primary" style={{background: 'var(--espresso)', color: 'var(--cream)'}}>

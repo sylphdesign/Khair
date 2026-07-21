@@ -1402,7 +1402,57 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 /* Page visibility */
 [data-page]{display:none}[data-page].active{display:block}
 
+/* ======================================== PRODUCTS ======================================== */
+/* Cards became links, so they need to lay out as blocks. */
+a.sp-pcard, a.collection-card { display: block; color: inherit; }
+.sp-pimg > img, .collection-card-image > img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* Product detail */
+.pd-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: start; }
+.pd-cover { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; background: var(--cream); }
+.pd-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 10px; }
+.pd-thumbs img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block;
+  background: var(--cream); transition: opacity .4s var(--ease-out-expo);
+}
+.pd-thumbs img:hover { opacity: .8; }
+.pd-eyebrow {
+  font-size: .7rem; letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 14px;
+}
+/* These four are scoped to .pd-detail so they outrank the generic
+   `.sp-wide h2/h3/p` rules this page inherits. */
+.pd-detail .pd-title {
+  font-family: var(--font-display); font-size: 2.4rem; font-weight: 300;
+  color: var(--espresso); line-height: 1.1; margin: 0 0 10px;
+}
+.pd-detail .pd-spec { font-size: .9rem; color: var(--text-med); margin-bottom: 30px; font-weight: 300; }
+.pd-highlights { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 24px; }
+.pd-highlights h3 {
+  font-family: var(--font-display); font-size: 1.15rem; font-weight: 400;
+  color: var(--sage); margin: 0 0 6px; position: relative; padding-left: 20px;
+}
+.pd-highlights h3::before {
+  content: ''; position: absolute; left: 0; top: .65em;
+  width: 10px; height: 1px; background: var(--gold);
+}
+.pd-highlights p { font-size: .9rem; line-height: 1.75; color: var(--text-med); margin: 0 0 0 20px; font-weight: 300; }
+.pd-detail .pd-subhead {
+  font-family: var(--font-body); font-size: .7rem; letter-spacing: .25em;
+  text-transform: uppercase; color: var(--text-light); margin: 0 0 18px; font-weight: 500;
+}
+.pd-specs { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 30px; }
+.pd-specs dt {
+  font-size: .65rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text-light); margin-bottom: 4px;
+}
+.pd-specs dd { margin: 0; font-size: .88rem; color: var(--espresso); font-weight: 300; }
+.pd-actions { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; margin-top: 40px; }
+.pd-detail .pd-note { font-size: .78rem; color: var(--text-light); margin: 20px 0 0; line-height: 1.7; }
+
 /* Responsive for sub-pages */
-@media(max-width:1024px){.sp-hero{padding:220px 30px 60px}.sp-narrow,.sp-wide{padding:60px 30px}.sp-pgrid{grid-template-columns:repeat(2,1fr)}.sp-cgrid,.sp-mgrid{grid-template-columns:1fr}.sp-cta{padding:60px 30px}}
-@media(max-width:768px){.sp-hero{padding:180px 20px 50px}.sp-narrow,.sp-wide{padding:50px 20px}.sp-pgrid{grid-template-columns:1fr;max-width:400px}.sp-cta{padding:50px 20px}}
+@media(max-width:1024px){.sp-hero{padding:220px 30px 60px}.sp-narrow,.sp-wide{padding:60px 30px}.sp-pgrid{grid-template-columns:repeat(2,1fr)}.sp-cgrid,.sp-mgrid{grid-template-columns:1fr}.sp-cta{padding:60px 30px}.pd-layout{grid-template-columns:1fr;gap:45px}}
+@media(max-width:768px){.sp-hero{padding:180px 20px 50px}.sp-narrow,.sp-wide{padding:50px 20px}.sp-pgrid{grid-template-columns:1fr;max-width:400px}.sp-cta{padding:50px 20px}.pd-title{font-size:1.9rem}.pd-specs{grid-template-columns:1fr}.pd-actions{flex-direction:column;align-items:flex-start;gap:20px}}
 
