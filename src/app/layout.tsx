@@ -1,5 +1,24 @@
 import type { Metadata } from 'next';
+import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
 import './globals.css';
+
+/* globals.css declared these families but nothing ever loaded them, so every
+   visitor fell back to Times New Roman. next/font self-hosts at build time,
+   which keeps the static export self-contained (no external font request). */
+const display = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  style: ['normal', 'italic'],
+  variable: '--font-display-loaded',
+  display: 'swap',
+});
+
+const body = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-body-loaded',
+  display: 'swap',
+});
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import PageAnimations from '@/components/PageAnimations';
@@ -27,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="js-ready antialiased">
         <Preloader />
         <Cursor />

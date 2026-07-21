@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { products } from '@/data/products';
 import { FeaturedProductCard } from '@/components/ProductCard';
+import Testimonials from '@/components/Testimonials';
 
 export const metadata: Metadata = {
   title: "Khair Wigs \u2014 Hand-Tied Luxury Wigs for Women with Hair Loss",
@@ -204,39 +205,7 @@ export default function Page() {
     <p className="section-eyebrow reveal">Stories</p>
     <h2 className="section-title reveal delay-1">They Tried Everything.<br /><em>Then They Found Khair.</em></h2>
   </div>
-  <div className="testimonials-slider reveal delay-2">
-    <div className="testimonial-card active" data-index="0">
-      <div className="testimonial-quote-mark">&ldquo;</div>
-      <p className="testimonial-text">For the first time in three years, I didn't think about my hair once today. I just lived. That's the gift Khair gave me.</p>
-      <p className="testimonial-author">Sarah M.</p>
-      <p className="testimonial-context">Atlanta &bull; Living with alopecia for 8 years</p>
-    </div>
-    <div className="testimonial-card" data-index="1">
-      <div className="testimonial-quote-mark">&ldquo;</div>
-      <p className="testimonial-text">My husband cried when he saw me. He said I looked like myself again. I didn't realize how much I'd lost until I got it back.</p>
-      <p className="testimonial-author">Maria L.</p>
-      <p className="testimonial-context">Los Angeles &bull; Post-chemotherapy recovery</p>
-    </div>
-    <div className="testimonial-card" data-index="2">
-      <div className="testimonial-quote-mark">&ldquo;</div>
-      <p className="testimonial-text">I've worn wigs for twelve years. This is the first one I've ever forgotten I was wearing. The scalp — it looks like my skin.</p>
-      <p className="testimonial-author">Diane K.</p>
-      <p className="testimonial-context">London &bull; Female pattern hair loss</p>
-    </div>
-    <div className="testimonial-nav">
-      <div className="testimonial-dot active" data-index="0"></div>
-      <div className="testimonial-dot" data-index="1"></div>
-      <div className="testimonial-dot" data-index="2"></div>
-    </div>
-    <div className="testimonial-arrows">
-      <button className="testimonial-arrow" id="prevTestimonial" aria-label="Previous testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      </button>
-      <button className="testimonial-arrow" id="nextTestimonial" aria-label="Next testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
-    </div>
-  </div>
+  <Testimonials />
 </section>
 
 {/*  CTA SECTION  */}

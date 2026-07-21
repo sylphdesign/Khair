@@ -21,8 +21,10 @@
   --text-light: #8A8480;
   --white: #FFFFFF;
   
-  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
-  --font-body: 'Ginora Sans', 'DM Sans', sans-serif;
+  /* 'Ginora Sans' stays first: it's the licensed brand face, so if it is ever
+     self-hosted it wins automatically over the loaded DM Sans fallback. */
+  --font-display: var(--font-display-loaded), 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-body: 'Ginora Sans', var(--font-body-loaded), 'DM Sans', sans-serif;
   
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -313,8 +315,35 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   height: 1.5px;
   background: var(--cream);
   transition: all 0.4s var(--ease-out-expo);
+  transform-origin: center;
 }
 .nav.scrolled .nav-hamburger span { background: var(--espresso); }
+/* Bars fold into an X while the panel is open. */
+.nav-hamburger.open span { background: var(--cream); }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Full-screen panel; only reachable at the breakpoint that hides .nav-links. */
+.nav-mobile {
+  position: fixed; inset: 0; z-index: 999;
+  background: var(--espresso);
+  display: none; flex-direction: column; align-items: center; justify-content: center;
+  gap: 40px; padding: 40px;
+  opacity: 0; visibility: hidden;
+  transition: opacity .45s var(--ease-out-expo), visibility .45s;
+}
+.nav-mobile.open { opacity: 1; visibility: visible; }
+.nav-mobile ul { list-style: none; margin: 0; padding: 0; text-align: center; }
+.nav-mobile li { margin-bottom: 26px; }
+.nav-mobile li a {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 300;
+  color: var(--cream); transition: color .3s;
+}
+.nav-mobile li a:hover { color: var(--gold); }
+/* The nav bar sits above the panel so the close control stays reachable. */
+.nav.menu-open { z-index: 1000; }
+.nav.menu-open .nav-logo { background-color: var(--cream); }
 
 /* ========================================
    HERO SECTION
@@ -1301,6 +1330,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   .nav.scrolled .nav-logo { height: 50px; width: 92px; }
   .nav-links, .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
+  .nav-mobile { display: flex; }
   .section { padding: 60px 20px; }
   .hero-content { padding: 0 20px; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
@@ -1385,6 +1415,11 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .sp-lu{font-size:.75rem;color:var(--text-light);letter-spacing:.1em;margin-bottom:30px;padding-bottom:20px;border-bottom:1px solid var(--cream-dark)}
 .sp-ci{display:flex;gap:16px;align-items:flex-start;margin-bottom:28px}
 .sp-ci-icon{width:40px;height:40px;border:1px solid var(--cream-dark);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sp-collhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:50px;flex-wrap:wrap;gap:20px}
+.sp-collhead h2{margin:0;font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--espresso)}
+.sp-collhead h2 em{font-style:italic;color:var(--sage)}
+.sp-collhead p{margin:4px 0 0;font-size:.95rem;color:var(--text-med);font-weight:300}
+.sp-count{margin:28px 0 0;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-light)}
 .sp-filtbar{display:flex;gap:12px;flex-wrap:wrap}
 .sp-filtbar button{padding:10px 22px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;border:1px solid var(--cream-dark);background:transparent;color:var(--text-med);transition:all .3s;font-family:var(--font-body)}
 .sp-filtbar button.on{border-color:var(--espresso);background:var(--espresso);color:var(--cream)}
