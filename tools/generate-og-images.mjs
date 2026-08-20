@@ -17,6 +17,9 @@
 import { chromium } from 'playwright';
 import { mkdirSync, writeFileSync, rmSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
+// Needs Node 22.6+ for TypeScript stripping. This is a manual tool run locally,
+// never during a build — the deploy runs Node 20, where this import would throw
+// ERR_UNKNOWN_FILE_EXTENSION. Keep it out of any npm lifecycle script.
 import { products } from '../src/data/products.ts';
 
 const ORIGIN = process.env.OG_ORIGIN ?? 'http://localhost:3000';
