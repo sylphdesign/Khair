@@ -27,7 +27,7 @@ const CARDS = [
   ['og-collection',  'Our Collection',    'Pieces Designed',          'to Disappear.',   'Hand-tied full lace in 100% European hair.',       '/products/amara/amara-1.jpg'],
   ['og-story',       'Our Story',         'Born from 15 Years',       'of Hair Loss.',   'Built by someone who needed it first.',            '/products/alisha/alisha-3.jpg'],
   ['og-custom',      'Custom Orders',     'Made to Your',             'Measurements.',   'Length, color, density, and cap — all yours.',     '/products/amara/amara-3.jpg'],
-  ['og-care',        'Care Guide',        'Care That Keeps It',       'Flawless.',       'Washing, styling, and maintenance, step by step.', '/products/alisha/alisha-5.jpg'],
+  ['og-care',        'Care Guide',        'Care That Keeps It',       'Flawless.',       'Washing, styling, and maintenance, step by step.', '/products/alisha/alisha-4.jpg'],
   ['og-measurement', 'Measurement Guide', 'A Fit That Is',            'Uniquely Yours.', 'The six-point BGH system, in under five minutes.', '/products/amara/amara-2.jpg'],
 ];
 

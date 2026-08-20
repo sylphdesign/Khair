@@ -823,6 +823,12 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   color: var(--text-light);
   font-weight: 300;
 }
+.collection-card-bottom .collection-card-price {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--espresso);
+  margin-top: 10px;
+}
 .collection-cta {
   text-align: center;
   margin-top: 60px;
@@ -1382,6 +1388,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .sp-pcard:hover .sp-pimg{transform:scale(1.02)}
 .sp-pinfo{padding:18px 0}.sp-pinfo h3{font-family:var(--font-display);font-size:1.2rem;font-weight:400;color:var(--espresso);margin-bottom:4px}
 .sp-pinfo p{font-size:.8rem;color:var(--text-light);margin-bottom:2px}
+.sp-pinfo .sp-pprice{font-family:var(--font-display);font-size:1.05rem;color:var(--espresso);margin:10px 0 0}
 .sp-badge{position:absolute;top:16px;left:16px;background:var(--sage);color:var(--cream);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;padding:6px 14px;font-weight:500}
 .sp-faqi{border-bottom:1px solid var(--cream-dark);overflow:hidden}
 .sp-faqq{display:flex;justify-content:space-between;align-items:center;padding:24px 0;cursor:pointer;width:100%;text-align:left;background:none;border:none;font-family:inherit}
@@ -1528,7 +1535,12 @@ a.sp-pcard, a.collection-card { display: block; color: inherit; }
   font-family: var(--font-display); font-size: 2.4rem; font-weight: 300;
   color: var(--espresso); line-height: 1.1; margin: 0 0 10px;
 }
-.pd-detail .pd-spec { font-size: .9rem; color: var(--text-med); margin-bottom: 30px; font-weight: 300; }
+.pd-detail .pd-spec { font-size: .9rem; color: var(--text-med); margin-bottom: 14px; font-weight: 300; }
+/* Display face at a restrained size — reads as considered, not shouted. */
+.pd-detail .pd-price {
+  font-family: var(--font-display); font-size: 1.75rem; font-weight: 400;
+  color: var(--espresso); margin: 0 0 30px; line-height: 1;
+}
 .pd-highlights { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 24px; }
 .pd-highlights h3 {
   font-family: var(--font-display); font-size: 1.15rem; font-weight: 400;

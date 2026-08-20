@@ -27,9 +27,19 @@ export interface Product {
   constructionLine: string;
   /** One sentence used as the detail-page lede and meta description. */
   tagline: string;
+  /** Base price in USD. Custom modifications are quoted at consultation. */
+  price: number;
   highlights: ProductHighlight[];
   specs: ProductSpec[];
   images: ProductImage[];
+}
+
+/** "$1,499.99" — USD, always two decimals. */
+export function formatPrice(price: number): string {
+  return price.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
 }
 
 export const products: Product[] = [
@@ -41,6 +51,7 @@ export const products: Product[] = [
     constructionLine: 'Full Lace · Scalp Simulation Technology™',
     tagline:
       'An 18" custom hand-tied full lace wig in silky straight European hair, with a 4" × 12" Scalp Simulation panel that parts naturally in any direction.',
+    price: 1499.99,
     highlights: [
       {
         title: 'Scalp Simulation Technology™ Front to Back (4" × 12")',
@@ -84,10 +95,6 @@ export const products: Product[] = [
       },
       {
         src: '/products/alisha/alisha-4.jpg',
-        alt: 'The Alisha wig lifted by hand to reveal the hand-tied cap and the part line running front to back.',
-      },
-      {
-        src: '/products/alisha/alisha-5.jpg',
         alt: 'Overhead view of the Alisha wig showing the Scalp Simulation part and the pre-cut lace at the hairline.',
       },
     ],
@@ -101,6 +108,7 @@ export const products: Product[] = [
     constructionLine: 'Full Lace · Scalp Simulation Technology™',
     tagline:
       'An 18" custom hand-tied full lace wig in silky straight European virgin hair, a natural 1B at 130% density for natural fullness.',
+    price: 1499.99,
     highlights: [
       {
         title: '18" Custom Hand-Tied Full Lace Wig',

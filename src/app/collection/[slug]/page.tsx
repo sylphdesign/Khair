@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { products, getProduct } from '@/data/products';
+import { products, getProduct, formatPrice } from '@/data/products';
 import ProductGallery from '@/components/ProductGallery';
 
 export function generateStaticParams() {
@@ -73,6 +73,13 @@ export default async function Page({
             ),
             brand: { '@type': 'Brand', name: 'Khair Wigs' },
             url: `https://khairwigs.com/collection/${product.slug}/`,
+            offers: {
+              '@type': 'Offer',
+              price: product.price.toFixed(2),
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/InStock',
+              url: `https://khairwigs.com/collection/${product.slug}/`,
+            },
             additionalProperty: product.specs.map((s) => ({
               '@type': 'PropertyValue',
               name: s.label,
@@ -102,6 +109,7 @@ export default async function Page({
             <p className="pd-eyebrow">{product.category} · Hand-Tied</p>
             <h2 className="pd-title">{product.name}</h2>
             <p className="pd-spec">{product.specLine}</p>
+            <p className="pd-price">{formatPrice(product.price)}</p>
 
             {product.highlights.length > 0 && (
               <ul className="pd-highlights">
@@ -142,7 +150,8 @@ export default async function Page({
             </div>
             <p className="pd-note">
               Every piece can be tailored — length, color, density, and cap
-              dimensions. Pricing is shared during your private consultation.
+              dimensions. Custom modifications are quoted during your private
+              consultation.
             </p>
           </div>
         </div>

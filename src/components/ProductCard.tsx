@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Product } from '@/data/products';
+import { formatPrice, type Product } from '@/data/products';
 
 function ImagePlaceholder({ label }: { label: string }) {
   return (
@@ -53,6 +53,7 @@ export function ProductCard({ product }: { product: Product }) {
         <p style={{ fontSize: '.75rem', color: 'var(--text-light)' }}>
           {product.constructionLine}
         </p>
+        <p className="sp-pprice">{formatPrice(product.price)}</p>
       </div>
     </CardShell>
   );
@@ -91,6 +92,7 @@ export function FeaturedProductCard({
       <div className="collection-card-bottom">
         <h3>{product.name}</h3>
         <p>{product.constructionLine}</p>
+        <p className="collection-card-price">{formatPrice(product.price)}</p>
       </div>
     </CardShell>
   );
